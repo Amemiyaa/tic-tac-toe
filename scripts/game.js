@@ -50,3 +50,9 @@ function isWin() {
   }
   return false;
 }
+
+function resetStates() {
+  board = ["", "", "", "", "", "", "", "", ""];
+  playerTime = 0;
+  gameOver = false;
+}
