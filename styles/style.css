@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  display: grid;
+  grid-template: 6.5rem 6.5rem 6.5rem / 6.5rem 6.5rem 6.5rem;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.square {
+  width: 6.5rem;
+  height: 6.5rem;
+  background-color: black;
+  border: 1px solid gray;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content:"\1F785";
+  color: white;
+  line-height: 6.5rem;
+  font-size: 3.2rem;
+}
+
+.cross {
+  position: relative;
+}
+
+.cross:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "\2716";
+  color: white;
+  line-height: 6.5rem;
+  font-size: 3.2rem;
+
+}
