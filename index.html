@@ -9,7 +9,22 @@
   </head>
   <body>
     <main>
-      <h1>Tic Tac Toe</h1>
+      <header>
+        <h1>Tic Tac Toe</h1>
+      </header>
+
+        <div class="players">
+          <div class="player_1_container">
+            <h2>Player 1</h2>
+            <input type="text" name="player_1" id="player_1" maxlength="12">
+          </div>
+
+          <div class="player_2_container">
+            <h2>Player 2</h2>
+            <input type="text" name="player_2" id="player_2" maxlength="12">
+          </div>
+        </div>
+
         <div class="game">
 
           <div id="0" class="square" data="1">
@@ -39,9 +54,25 @@
           <div id="8" class="square" data="9">
           </div>
 
-          <button class="reset_game" onclick="resetGame()">Reset Game</button>
+          <button class="reset_game button_text" onclick="resetGame()">Reset Game</button>
         </div>
-    </main>
+      </main>
+
+      <footer class="scoreboard_container">
+        <h2>Scoreboard:</h2>
+        <div class="players_scoreboard">
+          <div class="player_1_scoreabord_container">
+            <p id="player_1_scoreboard">Player 1</p>
+            <div class="scoreboard_square"><p id="player_1_score">0</p></div>
+          </div>
+          <p>X</p>
+          <div class="player_2_scoreabord_container">
+            <p id="player_2_scoreboard">Player 2</p>
+            <div class="scoreboard_square"><p id="player_2_score">0</p></div>
+          </div>
+          <button class="reset_scoreboard button_text" onclick="resetScoreboard()">Reset Scoreboard</button>
+        </div>
+    </footer>
 
     <script src="./scripts/game.js"></script>
     <script src="./scripts/interface.js"></script>

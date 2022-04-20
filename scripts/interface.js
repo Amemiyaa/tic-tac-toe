@@ -1,6 +1,6 @@
 let winner;
-let player_1 = prompt("Player 1: ");
-let player_2 = prompt("Player 2: ");
+let player_1 = document.getElementById("player_1");
+let player_2 = document.getElementById("player_2");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -20,11 +20,11 @@ function handleClick(event){
   if (handleMove(position)) {
 
     setTimeout(()=>{
-      if (playerTime == 0? winner = player_1 : winner = player_2);
+      if (playerTime == 0? winner = player_1.value : winner = player_2.value);
       playerTime += 1;
-      alert("Game over! - Player: " + playerTime + " (" + winner + ")" + " is win!");
-    }, 10)
 
+      alert("Game over! - Player " + playerTime + ": (" + winner + ")" + " is the winner!");
+    }, 10)
   };
   updateSquare(position);
 
@@ -38,13 +38,12 @@ function updateSquare(position) {
   }
 }
 
+// Reset Game Function
+
 function resetGame(){
   resetStates()
   updateSquares()
 }
-
-
-// Reset Game - Still in development
 
 function updateSquares() {
   let squares = document.querySelectorAll(".square");
