@@ -1,3 +1,12 @@
+:root {
+  --background-color: black;
+  --main-color: white;
+  --main-font: white;
+  --secondary-font: black;
+  --main-border: gray;
+  --cancel-button-color: rgb(248, 20, 20);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +14,7 @@
 }
 
 body {
+  background-color: var(--background-color);
   width: 100vw;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +25,7 @@ body {
 /* HEADER */
 
 header h1 {
+  color: var(--main-font);
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -42,8 +53,8 @@ main {
 .square {
   width: 6.5rem;
   height: 6.5rem;
-  background-color: black;
-  border: 2px solid gray;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-border);
 }
 
 .square:hover {
@@ -52,7 +63,7 @@ main {
 
 .square::before{
   content: attr(data);
-  color: white;
+  color: var(--secondary-font);
   font-weight: bold;
   margin-left: 0.5rem;
 }
@@ -68,7 +79,7 @@ main {
   align-items: center;
   justify-content: center;
   content:"\1F785";
-  color: white;
+  color: var(--secondary-font);
   line-height: 4.5rem;
   font-size: 4.2rem;
 }
@@ -82,7 +93,7 @@ main {
   align-items: center;
   justify-content: center;
   content: "\2716";
-  color: white;
+  color: var(--secondary-font);
   line-height: 4.5rem;
   font-size: 4.2rem;
 }
@@ -99,20 +110,13 @@ main {
 /* RESET GAME BUTTON */
 
 .reset_game {
-  background-color: black;
-  color: #FFFFFF;
+  background-color: var(--main-color);
+  color: var(--secondary-font);
   margin-top: 1.8rem;
   padding: 1.5rem;
   width: 20.5rem;
   margin-bottom: 15rem;
 }
-
-.reset_game:hover {
-  transition: ease 2.2ms;
-  background-color: rgb(248, 20, 20);
-  cursor: pointer;
-}
-
 /* PLAYERS */
 
 .players {
@@ -126,17 +130,22 @@ main {
 }
 
 .players h2 {
+  color: var(--main-font);
   margin-bottom: 0.8rem;
+}
+
+.player_1_scoreboard, .player_2_scoreboard {
+  color: var(--main-font);
 }
 
 .players input {
   width: 20rem;
   height: 3.2rem;
-  background-color: black;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-font);
   font-size: 2rem;
   outline: none;
-  border: 2px solid gray;
+  border: 2px solid var(--main-border);
   font-weight: bold;
   text-align: center;
 }
@@ -150,6 +159,7 @@ main {
 }
 
 .scoreboard_container h2 {
+  color: var(--main-font);
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 1.8rem;
@@ -163,6 +173,7 @@ main {
 }
 
 .players_scoreboard p{
+  color: var(--main-font);
   font-weight: bold;
   font-size: 4rem;
 }
@@ -170,14 +181,14 @@ main {
 .scoreboard_square {
   width: 6.5rem;
   height: 6.5rem;
-  background-color: black;
-  border: 2px solid gray;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-border);
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 }
 
 .scoreboard_square p {
-  color: white;
+  color: var(--secondary-font);
   text-align: center;
   line-height: 6.5rem
 }
@@ -185,8 +196,8 @@ main {
 /* RESET SCOREBOARD BUTTON */
 
 .reset_scoreboard {
-  background-color: black;
-  color: #FFFFFF;
+  background-color: var(--main-color);
+  color: var(--secondary-font);
   margin-top: 1.8rem;
   width: 20.5rem;
   position: absolute;
@@ -195,8 +206,9 @@ main {
 }
 
 
-.reset_scoreboard:hover {
+.reset_game:hover, .reset_scoreboard:hover {
   transition: ease 2.2ms;
-  background-color: rgb(248, 20, 20);
+  background-color: var(--cancel-button-color);
+  color: var(--main-font);
   cursor: pointer;
 }

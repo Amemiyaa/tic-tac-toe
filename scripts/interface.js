@@ -1,6 +1,11 @@
 let winner;
+
 let player_1 = document.getElementById("player_1");
 let player_2 = document.getElementById("player_2");
+
+let player_1_score = 0;
+let player_2_score = 0;
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -11,6 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+// Change Scoreboard Name - Player One
+function changePlayerOneScoreboard() {
+  let playerOneScoreboard = document.getElementById("player_1_scoreboard");
+
+  playerOneScoreboard.innerHTML = player_1.value;
+}
+
+// Change Scoreboard Name - Player Two
+function changePlayerSecondScoreboard() {
+  let playerSecondScoreboard = document.getElementById("player_2_scoreboard");
+
+  playerSecondScoreboard.innerHTML = player_2.value;
+}
+
+// Update Scoreboard
+function updateScoreboard() {
+  let player_1_scoreboard = document.getElementById("player_1_score")
+  let player_2_scoreboard = document.getElementById("player_2_score")
+  player_1_scoreboard.innerHTML = player_1_score;
+  player_2_scoreboard.innerHTML = player_2_score;
+}
 
 function handleClick(event){
 
@@ -18,12 +44,19 @@ function handleClick(event){
   let position = square.id;
 
   if (handleMove(position)) {
-
     setTimeout(()=>{
-      if (playerTime == 0? winner = player_1.value : winner = player_2.value);
+      if (playerTime === 0) {
+        winner = player_1.value
+        player_1_score += 1;
+        updateScoreboard();
+      } else {
+        winner = player_2.value;
+        player_2_score += 1;
+        updateScoreboard();
+      }
       playerTime += 1;
 
-      alert("Game over! - Player " + playerTime + ": (" + winner + ")" + " is the winner!");
+      alert("Game over! - Player " + playerTime + " - " + winner  + " is the winner!");
     }, 10)
   };
   updateSquare(position);
@@ -43,6 +76,19 @@ function updateSquare(position) {
 function resetGame(){
   resetStates()
   updateSquares()
+}
+
+function resetScoreboard() {
+  player_1_score = 0;
+  player_2_score = 0;
+
+  let player_1_scoreboard = document.getElementById("player_1_score")
+  let player_2_scoreboard = document.getElementById("player_2_score")
+
+  player_1_scoreboard.innerHTML = 0;
+  player_2_scoreboard.innerHTML = 0;
+  resetGame();
+
 }
 
 function updateSquares() {
